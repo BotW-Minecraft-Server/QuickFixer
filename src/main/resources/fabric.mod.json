@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "quickfixer",
+  "version": "${version}",
+  "name": "QuickFixer",
+  "description": "",
+  "authors": [],
+  "contact": {
+    "repo": "https://github.com/sam-chai/QuickFixer"
+  },
+  "license": "MIT",
+  "icon": "assets/quickfixer/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "link.botwmcs.quickfixer.client.QuickFixerClient"
+    ],
+    "main": [
+      "link.botwmcs.quickfixer.QuickFixer"
+    ]
+  },
+  "mixins": [
+    "quickfixer.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
