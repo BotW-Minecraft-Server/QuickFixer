@@ -27,6 +27,10 @@ repositories {
         name = "Fuzs Mod Resources"
         url = "https://raw.githubusercontent.com/Fuzss/modresources/main/maven/"
     }
+    maven {
+        name = "Shedaniel"
+        url "https://maven.shedaniel.me/"
+    }
 }
 
 dependencies {
@@ -47,6 +51,11 @@ dependencies {
 
     // Waystones Tweak
     modImplementation "wraith.waystones:wraith-waystones:${project.fwaystones_version}"
+
+    // REI Tweak
+    modImplementation "me.shedaniel:RoughlyEnoughItems-api-fabric:${project.rei_version}"
+    modImplementation "me.shedaniel:RoughlyEnoughItems-fabric:${project.rei_version}"
+    modImplementation "me.shedaniel:RoughlyEnoughItems-default-plugin-fabric:${project.rei_version}"
 
 }
 

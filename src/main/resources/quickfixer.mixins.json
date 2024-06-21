@@ -8,6 +8,8 @@
     "fwaystones.WaystoneBlockMixin"
   ],
   "client": [
+    "rei.FavoritesListWidgetMixin",
+    "rei.ConfigButtonWidgetMixin"
   ],
   "injectors": {
     "defaultRequire": 1

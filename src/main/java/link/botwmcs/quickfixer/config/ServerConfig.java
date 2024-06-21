@@ -10,6 +10,9 @@ public class ServerConfig {
     public final ForgeConfigSpec.BooleanValue enableWaystoneCantDestroy;
     public final ForgeConfigSpec.BooleanValue enableWaystoneKanjiWaypoint;
 
+    public final ForgeConfigSpec.BooleanValue enableReiGuiTweak;
+    public final ForgeConfigSpec.BooleanValue enableCreateReiCompatible;
+
     static {
         Pair<ServerConfig, ForgeConfigSpec> specPair = new ForgeConfigSpec.Builder().configure(ServerConfig::new);
         CONFIG_SPEC = specPair.getRight();
@@ -25,7 +28,14 @@ public class ServerConfig {
                 .comment("If true, waystones will display kanji waypoints.")
                 .define("enableWaystoneKanjiWaypoint", true);
         builder.pop();
-        builder.push("player");
+
+        builder.push("rei");
+        enableReiGuiTweak = builder
+                .comment("If true, REI GUI will be tweaked.")
+                .define("enableReiGuiTweak", true);
+        enableCreateReiCompatible = builder
+                .comment("If true, REI will be compatible with Create.")
+                .define("enableCreateReiCompatible", true);
         builder.pop();
     }
 }
