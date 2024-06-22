@@ -10,8 +10,7 @@
   "client": [
     "rei.ConfigButtonWidgetMixin",
     "rei.ConfigManagerImplMixin",
-    "rei.FavoritesListWidgetMixin",
-    "rei.REIConfigScreenMixin"
+    "rei.FavoritesListWidgetMixin"
   ],
   "injectors": {
     "defaultRequire": 1
