@@ -31,6 +31,13 @@ repositories {
         name = "Shedaniel"
         url "https://maven.shedaniel.me/"
     }
+    maven {
+        name = "CurseForge"
+        url "https://cursemaven.com"
+        content {
+            includeGroup "curse.maven"
+        }
+    }
 }
 
 dependencies {
@@ -56,6 +63,10 @@ dependencies {
     modImplementation "me.shedaniel:RoughlyEnoughItems-api-fabric:${project.rei_version}"
     modImplementation "me.shedaniel:RoughlyEnoughItems-fabric:${project.rei_version}"
     modImplementation "me.shedaniel:RoughlyEnoughItems-default-plugin-fabric:${project.rei_version}"
+
+    // Kiwi Tweak
+    modImplementation "curse.maven:kiwi-549404:5140632"
+    annotationProcessor "curse.maven:kiwi-549404:5140632"
 
 }
 

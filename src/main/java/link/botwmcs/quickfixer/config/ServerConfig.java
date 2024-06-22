@@ -13,6 +13,8 @@ public class ServerConfig {
     public final ForgeConfigSpec.BooleanValue enableReiGuiTweak;
     public final ForgeConfigSpec.BooleanValue enableCreateReiCompatible;
 
+    public final ForgeConfigSpec.BooleanValue enableKiwiTweak;
+
     static {
         Pair<ServerConfig, ForgeConfigSpec> specPair = new ForgeConfigSpec.Builder().configure(ServerConfig::new);
         CONFIG_SPEC = specPair.getRight();
@@ -36,6 +38,12 @@ public class ServerConfig {
         enableCreateReiCompatible = builder
                 .comment("If true, REI will be compatible with Create.")
                 .define("enableCreateReiCompatible", true);
+        builder.pop();
+
+        builder.push("kiwi");
+        enableKiwiTweak = builder
+                .comment("If true, Kiwi will be tweaked.")
+                .define("enableKiwiTweak", true);
         builder.pop();
     }
 }

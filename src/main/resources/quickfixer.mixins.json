@@ -5,7 +5,9 @@
   "compatibilityLevel": "JAVA_17",
   "mixins": [
     "fwaystones.UtilsMixin",
-    "fwaystones.WaystoneBlockMixin"
+    "fwaystones.WaystoneBlockMixin",
+    "kiwi.DebugTooltipCacheMixin",
+    "kiwi.TooltipEventsMixin"
   ],
   "client": [
     "rei.ConfigButtonWidgetMixin",
