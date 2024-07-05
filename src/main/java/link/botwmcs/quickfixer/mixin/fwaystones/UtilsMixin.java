@@ -1,6 +1,6 @@
 package link.botwmcs.quickfixer.mixin.fwaystones;
 
-import link.botwmcs.quickfixer.config.ServerConfig;
+import link.botwmcs.quickfixer.config.CommonConfig;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -17,7 +17,7 @@ public class UtilsMixin {
      */
     @Inject(method = "generateUniqueId", at = @At("RETURN"), cancellable = true)
     private static void modifyGenerateUniqueId(CallbackInfoReturnable<String> cir) {
-        if (ServerConfig.CONFIG.enableWaystoneKanjiWaypoint.get()) {
+        if (CommonConfig.CONFIG.enableWaystoneKanjiWaypoint.get()) {
             Random random = new Random();
             if (random.nextDouble() < 1.0E-4) {
                 cir.setReturnValue("DeatHunter was here");

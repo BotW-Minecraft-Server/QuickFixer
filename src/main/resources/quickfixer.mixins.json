@@ -10,6 +10,7 @@
     "kiwi.TooltipEventsMixin"
   ],
   "client": [
+    "reesessodiumptions.SodiumVideoOptionsScreenMixin",
     "rei.ConfigButtonWidgetMixin",
     "rei.ConfigManagerImplMixin",
     "rei.FavoritesListWidgetMixin"

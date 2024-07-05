@@ -3,9 +3,9 @@ package link.botwmcs.quickfixer.config;
 import net.minecraftforge.common.ForgeConfigSpec;
 import org.apache.commons.lang3.tuple.Pair;
 
-public class ServerConfig {
+public class CommonConfig {
     public static final ForgeConfigSpec CONFIG_SPEC;
-    public static final ServerConfig CONFIG;
+    public static final CommonConfig CONFIG;
 
     public final ForgeConfigSpec.BooleanValue enableWaystoneCantDestroy;
     public final ForgeConfigSpec.BooleanValue enableWaystoneKanjiWaypoint;
@@ -15,13 +15,15 @@ public class ServerConfig {
 
     public final ForgeConfigSpec.BooleanValue enableKiwiTweak;
 
+    public final ForgeConfigSpec.BooleanValue enableSodiumTweak;
+
     static {
-        Pair<ServerConfig, ForgeConfigSpec> specPair = new ForgeConfigSpec.Builder().configure(ServerConfig::new);
+        Pair<CommonConfig, ForgeConfigSpec> specPair = new ForgeConfigSpec.Builder().configure(CommonConfig::new);
         CONFIG_SPEC = specPair.getRight();
         CONFIG = specPair.getLeft();
     }
 
-    ServerConfig(ForgeConfigSpec.Builder builder) {
+    CommonConfig(ForgeConfigSpec.Builder builder) {
         builder.push("waystone");
         enableWaystoneCantDestroy = builder
                 .comment("If true, players will not be able to destroy waystones.")
@@ -44,6 +46,12 @@ public class ServerConfig {
         enableKiwiTweak = builder
                 .comment("If true, Kiwi will be tweaked.")
                 .define("enableKiwiTweak", true);
+        builder.pop();
+
+        builder.push("sodium");
+        enableSodiumTweak = builder
+                .comment("If true, Sodium will be tweaked.")
+                .define("enableSodiumTweak", true);
         builder.pop();
     }
 }

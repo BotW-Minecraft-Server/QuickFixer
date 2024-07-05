@@ -1,6 +1,6 @@
 package link.botwmcs.quickfixer.mixin.rei;
 
-import link.botwmcs.quickfixer.config.ServerConfig;
+import link.botwmcs.quickfixer.config.CommonConfig;
 import me.shedaniel.rei.impl.client.gui.widget.favorites.FavoritesListWidget;
 import me.shedaniel.rei.impl.client.gui.widget.favorites.panel.FavoritesPanel;
 import me.shedaniel.rei.impl.client.gui.widget.favorites.panel.FavoritesTogglePanelButton;
@@ -9,8 +9,6 @@ import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
-
-import javax.swing.text.AbstractDocument;
 
 @Mixin(value = FavoritesListWidget.class, remap = false)
 public class FavoritesListWidgetMixin {
@@ -28,7 +26,7 @@ public class FavoritesListWidgetMixin {
      */
     @Overwrite
     private void renderAddFavorite(GuiGraphics graphics, int mouseX, int mouseY, float delta) {
-        if (ServerConfig.CONFIG.enableReiGuiTweak.get()) {
+        if (CommonConfig.CONFIG.enableReiGuiTweak.get()) {
             this.favoritePanel.render(graphics, mouseX, mouseY, delta);
         } else {
             this.favoritePanel.render(graphics, mouseX, mouseY, delta);

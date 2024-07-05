@@ -1,12 +1,11 @@
 package link.botwmcs.quickfixer.mixin.kiwi;
 
-import link.botwmcs.quickfixer.config.ServerConfig;
+import link.botwmcs.quickfixer.config.CommonConfig;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.ClickEvent;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
-import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
@@ -25,7 +24,7 @@ public class TooltipEventsMixin {
      */
     @Overwrite
     private static void trySendTipMsg(Minecraft mc) {
-        if (!ServerConfig.CONFIG.enableKiwiTweak.get()) {
+        if (!CommonConfig.CONFIG.enableKiwiTweak.get()) {
             if (firstSeenDebugTooltip && mc.player != null) {
                 firstSeenDebugTooltip = false;
                 if (KiwiClientConfig.debugTooltipMsg) {

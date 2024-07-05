@@ -38,6 +38,13 @@ repositories {
             includeGroup "curse.maven"
         }
     }
+    maven {
+        name = "Modrinth"
+        url = "https://api.modrinth.com/maven"
+        content {
+            includeGroup "maven.modrinth"
+        }
+    }
 }
 
 dependencies {
@@ -67,6 +74,11 @@ dependencies {
     // Kiwi Tweak
     modImplementation "curse.maven:kiwi-549404:5140632"
     annotationProcessor "curse.maven:kiwi-549404:5140632"
+
+    // Reeses Sodium Options Tweak
+    modImplementation "me.flashyreese.mods:reeses_sodium_options:${project.reeses_sodium_options_version}"
+    modImplementation "maven.modrinth:sodium:${project.sodium_version}"
+
 
 }
 

@@ -1,6 +1,6 @@
 package link.botwmcs.quickfixer.mixin.rei;
 
-import link.botwmcs.quickfixer.config.ServerConfig;
+import link.botwmcs.quickfixer.config.CommonConfig;
 import me.shedaniel.rei.api.client.ClientHelper;
 import me.shedaniel.rei.api.client.REIRuntime;
 import me.shedaniel.rei.api.client.config.ConfigManager;
@@ -33,7 +33,7 @@ public class ConfigButtonWidgetMixin {
     @Overwrite
     private static Collection<FavoriteMenuEntry> menuEntries() {
         ConfigObjectImpl config = ConfigManagerImpl.getInstance().getConfig();
-        if (ServerConfig.CONFIG.enableReiGuiTweak.get()) {
+        if (CommonConfig.CONFIG.enableReiGuiTweak.get()) {
             MutableComponent var10004 = Component.translatable("text.rei.config.menu.dark_theme");
             Objects.requireNonNull(config);
             ToggleMenuEntry var11 = ToggleMenuEntry.ofDeciding(var10004, config::isUsingDarkTheme, (dark) -> {

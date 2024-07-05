@@ -1,7 +1,7 @@
 package link.botwmcs.quickfixer.mixin.kiwi;
 
 import com.google.common.collect.Lists;
-import link.botwmcs.quickfixer.config.ServerConfig;
+import link.botwmcs.quickfixer.config.CommonConfig;
 import net.minecraft.ChatFormatting;
 import net.minecraft.Util;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -47,7 +47,7 @@ public class DebugTooltipCacheMixin {
 
             if (!this.showTags) {
                 if (KiwiClientConfig.tagsTooltipAppendKeybindHint) {
-                    if (!ServerConfig.CONFIG.enableKiwiTweak.get()) {
+                    if (!CommonConfig.CONFIG.enableKiwiTweak.get()) {
                         this.findIdLine(tooltip, (i) -> {
                             tooltip.set(i, ((Component)tooltip.get(i)).copy().append(" (alt)"));
                         });

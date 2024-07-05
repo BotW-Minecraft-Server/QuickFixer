@@ -1,6 +1,6 @@
 package link.botwmcs.quickfixer.mixin.rei;
 
-import link.botwmcs.quickfixer.config.ServerConfig;
+import link.botwmcs.quickfixer.config.CommonConfig;
 import link.botwmcs.quickfixer.impl.rei.LtsxREIConfigCategories;
 import me.shedaniel.rei.impl.client.config.ConfigManagerImpl;
 import me.shedaniel.rei.impl.client.gui.config.REIConfigScreen;
@@ -16,7 +16,7 @@ public class ConfigManagerImplMixin {
      */
     @Overwrite
     public Screen getConfigScreen(Screen parent) {
-        if (ServerConfig.CONFIG.enableReiGuiTweak.get()) {
+        if (CommonConfig.CONFIG.enableReiGuiTweak.get()) {
             return new REIConfigScreen(parent, LtsxREIConfigCategories.CATEGORIES);
         } else {
             return new REIConfigScreen(parent);
